@@ -1,0 +1,92 @@
+// カラーパレット
+$primary-color: #00b8d4;
+$button-hover-color: #008c9e;
+$background-color: #f7f7f7;
+$input-border-color: #dcdcdc;
+$text-color: #333;
+
+/* ベースのスタイル */
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    color: $text-color;
+    margin-bottom: 30px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid $input-border-color;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: $text-color;
+    outline: none;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+
+  &__shortContainer {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: $text-color;
+    word-wrap: break-word;
+    max-width: 80%;
+    margin-bottom: 10px;
+  }
+
+  &__short {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 10px;
+  }
+}
