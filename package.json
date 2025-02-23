@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"npm run backend\" \"npm run front\"",
     "backend": "nodemon app.js",
-    "front": "cd front && npm run dev"
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
