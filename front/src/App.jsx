@@ -14,7 +14,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const baseUrl = process.env.BASE_URL || import.meta.env.VITE_API_URL;
+      const baseUrl = process.env.BASE_URL || "http://localhost:3000";
       console.log("API URL:", baseUrl); // 環境変数の値を確認するためにログを追加
       // バックエンドAPIにURLを送信
       const response = await fetch(`${baseUrl}/shorten`, {
