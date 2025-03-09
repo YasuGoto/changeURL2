@@ -13,7 +13,8 @@ const updateShort = async (req, res) => {
     const newUrl = new Url({ originalUrl, shortId });
 
     await newUrl.save();
-    res.json({ shortUrl: `http://localhost:3000/${shortId}` });
+    const baseUrl = process.env.BASE_URL || "http://localhost:3000";
+    res.json({ shortUrl: `${baseUrl}/${shortId}` });
   } catch (err) {
     console.error("エラー発生:", err);
     res.status(500).json({ error: "サーバーエラーが発生しました" });
