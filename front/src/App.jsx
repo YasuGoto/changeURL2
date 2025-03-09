@@ -14,10 +14,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      console.log("API URL:", apiUrl); // 環境変数の値を確認するためにログを追加
+      const baseUrl = process.env.BASE_URL || import.meta.env.VITE_API_URL;
+      console.log("API URL:", baseUrl); // 環境変数の値を確認するためにログを追加
       // バックエンドAPIにURLを送信
-      const response = await fetch(`${apiUrl}/shorten`, {
+      const response = await fetch(`${baseUrl}/shorten`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
