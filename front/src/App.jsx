@@ -42,38 +42,36 @@ function App() {
   return (
     <div className="app">
       <h1 className="app__title">URL短縮サービス</h1>
-      <div className="app__container">
-        {/* URL入力フォーム */}
-        <form onSubmit={handleSubmit}>
-          <input
-            type="url"
-            value={url}
-            onChange={handleInputChange}
-            placeholder="URLを入力"
-            required
-            className="App__input"
-          />
-          <button type="submit" className="App__button">
-            短縮
-          </button>
-        </form>
-        {/* 短縮URLの表示 */}
-        {shortUrl && (
-          <div className="app__shortContainer">
-            <p>
-              短縮URL:{" "}
-              <a
-                href={shortUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="App__short"
-              >
-                {shortUrl}
-              </a>
-            </p>
-          </div>
-        )}
-      </div>
+      {/* URL入力フォーム */}
+      <form onSubmit={handleSubmit} className="app__form">
+        <input
+          type="url"
+          value={url}
+          onChange={handleInputChange}
+          placeholder="短縮したいURLを入力"
+          required
+          className="app__input"
+        />
+        <button type="submit" className="app__button">
+          短縮
+        </button>
+      </form>
+      {/* 短縮URLの表示 */}
+      {shortUrl && (
+        <div className="app__shortContainer">
+          <p>
+            短縮URL:{" "}
+            <a
+              href={shortUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="app__short"
+            >
+              {shortUrl}
+            </a>
+          </p>
+        </div>
+      )}
     </div>
   );
 }
