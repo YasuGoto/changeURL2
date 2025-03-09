@@ -1,8 +1,8 @@
-const Url = require("../models/Url");
-const { nanoid } = require("nanoid");
+import Url from "../models/Url.js";
+import { nanoid } from "nanoid";
 
 // URLを短縮するエンドポイント
-const updateShort = async (req, res) => {
+export const updateShort = async (req, res) => {
   try {
     const { originalUrl } = req.body;
     if (!originalUrl) {
@@ -13,7 +13,7 @@ const updateShort = async (req, res) => {
     const newUrl = new Url({ originalUrl, shortId });
 
     await newUrl.save();
-    const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+    const baseUrl = process.env.VITE_API_URL || "http://localhost:3000"; // ここは process.env に修正
     res.json({ shortUrl: `${baseUrl}/${shortId}` });
   } catch (err) {
     console.error("エラー発生:", err);
@@ -22,7 +22,7 @@ const updateShort = async (req, res) => {
 };
 
 // 短縮URLをリダイレクト
-const getRedirectURL = async (req, res) => {
+export const getRedirectURL = async (req, res) => {
   try {
     const { shortId } = req.params;
     const urlEntry = await Url.findOne({ shortId });
@@ -36,9 +36,4 @@ const getRedirectURL = async (req, res) => {
     console.error("エラー発生:", err); // 詳細なエラーメッセージをログに出力
     res.status(500).json({ error: "サーバーエラーが発生しました" });
   }
-};
-
-module.exports = {
-  updateShort,
-  getRedirectURL,
 };
