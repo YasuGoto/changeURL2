@@ -14,10 +14,9 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
       console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
-      const baseUrl =
-        "https://changeurl2.onrender.com" || "http://localhost:3000";
-      console.log("API URL:", baseUrl); // 環境変数の値を確認するためにログを追加
+      console.log("API URL:", baseUrl);
       // バックエンドAPIにURLを送信
       const response = await fetch(`${baseUrl}/shorten`, {
         method: "POST",

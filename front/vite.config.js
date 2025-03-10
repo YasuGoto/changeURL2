@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
-export default {
+export default defineConfig({
+  plugins: [react()],
   build: {
-    outDir: "front/dist", // 'front' フォルダ内に出力される
+    outDir: "dist", // 通常は 'dist' に出力
     rollupOptions: {
-      input: "/front/index.html", // Vercelに適切なエントリーポイントを指定
+      input: "index.html", // `front/` 内なら、このままでOK
     },
   },
-};
+});

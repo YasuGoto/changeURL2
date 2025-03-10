@@ -8,11 +8,9 @@ require("dotenv").config();
 const cors = require("cors");
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*", // Vercelからのリクエストを許可
-  })
-);
+app.use(cors({
+  origin: "*",  // Vercelからのリクエストを許可
+}));
 app.use("/", tasks);
 
 // DB接続、サーバー起動
