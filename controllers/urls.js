@@ -13,7 +13,7 @@ export const updateShort = async (req, res) => {
     const newUrl = new Url({ originalUrl, shortId });
 
     await newUrl.save();
-    const baseUrl = process.env.VITE_API_URL || "http://localhost:3000"; // ここは process.env に修正
+    const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
     res.json({ shortUrl: `${baseUrl}/${shortId}` });
   } catch (err) {
     console.error("エラー発生:", err);
