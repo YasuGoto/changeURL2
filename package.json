@@ -6,7 +6,8 @@
     "dev": "concurrently \"npm run backend\" \"npm run front\"",
     "backend": "nodemon app.js",
     "build": "vite build",
-    "start": "concurrently \"npm run backend\" \"npm run front\""
+    "start": "concurrently \"npm run backend\" \"npm run front\"",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +23,14 @@
     "nodemon": "^3.1.9"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "babel-jest": "^29.7.0",
     "concurrently": "^9.1.2",
+    "jest": "^29.7.0",
     "vite": "^6.1.1"
   }
 }
