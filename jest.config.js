@@ -1,8 +1,5 @@
-// jest.config.js
 module.exports = {
-  transformIgnorePatterns: [
-    "/node_modules/(?!your-module-name).*/", // 必要なモジュールだけをトランスフォーム
-  ],
+  transformIgnorePatterns: ["/node_modules/(?!your-module-name).*/"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
   },

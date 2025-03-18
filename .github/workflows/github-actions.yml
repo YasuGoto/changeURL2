@@ -1,4 +1,4 @@
-name: Run Jest Tests
+name: changeURL2
 
 on: [push]
 
@@ -13,11 +13,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "22" # 使用するNode.jsのバージョンを指定
+          node-version: "22"
 
       - name: Install dependencies
-        run: npm install # パッケージをインストール
+        run: npm install
 
       - name: Run Jest tests
-        run: npm test # Jestテストを実行
-
+        run: npm test

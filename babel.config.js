@@ -1,6 +1,6 @@
 module.exports = {
   presets: [
-    "@babel/preset-env", // 最新のJavaScript構文をサポート
-    "@babel/preset-react", // JSX構文をサポート
+    "@babel/preset-env", // JavaScript（ES5）に変換
+    "@babel/preset-react", // JSX→JS
   ],
 };

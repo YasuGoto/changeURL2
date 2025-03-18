@@ -1,4 +1,3 @@
-// jest.setup.js に追加
 globalThis.import = {
   meta: {
     env: {
