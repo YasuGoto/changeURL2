@@ -14,7 +14,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const baseUrl =
+        process.env.VITE_API_URL ||
+        import.meta.env?.VITE_API_URL ||
+        "http://localhost:3000";
       console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
       console.log("API URL:", baseUrl);
       // バックエンドAPIにURLを送信
