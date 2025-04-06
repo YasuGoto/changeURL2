@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 
 function App() {
@@ -14,12 +14,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const baseUrl =
-        process.env.VITE_API_URL ||
-        import.meta.env?.VITE_API_URL ||
-        "http://localhost:3000";
-      console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
-      console.log("API URL:", baseUrl);
+      const baseUrl = process.env.VITE_API_URL || "http://localhost:3000";
       // バックエンドAPIにURLを送信
       const response = await fetch(`${baseUrl}/shorten`, {
         method: "POST",
